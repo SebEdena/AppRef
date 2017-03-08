@@ -12,7 +12,7 @@ public class ApplicationUtilisateur {
 	private static final int PORT_CONNEXION = 2500;
 
 	public static void main(String[] args) {
-		int numAbonné, numDocument;
+		String login, mdp;
 		Scanner clavier = new Scanner(System.in);
 		Socket laSocket = null;
 		
@@ -22,15 +22,15 @@ public class ApplicationUtilisateur {
 			PrintWriter socketOut =  new PrintWriter(laSocket.getOutputStream(), true);
 
 			/* bonjour */
-			System.out.println("Bienvenue sur votre système de réservation : ");
-			System.out.println("Vous pouvez ici réserver un document disponible ");
-			System.out.println("et passer le chercher dans les 2 heures");
+			System.out.println("Bienvenue sur votre espace de connexion : ");
 			
 			/* saisie des données */;
-			System.out.println("Votre numéro d'abonné, svp :");
-
-			System.out.println("Le numéro de document que vous souhaitez réserver :");
-
+			System.out.println("Veuillez renseigner votre login :");
+			login = clavier.nextLine().trim().toLowerCase();
+			
+			System.out.println("Veuilez renseignez votre mot de passe:");
+			mdp = clavier.nextLine().trim().toLowerCase();
+			
 			/* envoi des données au service */
 			socketOut.println("");
 			socketOut.println("");
