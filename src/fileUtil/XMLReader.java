@@ -33,7 +33,7 @@ public class XMLReader {
 			if(list.item(i).getNodeType() == Node.ELEMENT_NODE){
 				Element object = (Element) list.item(i);
 				String s = "";
-				s += object.getNodeName() + ";" + 
+				s += object.getNodeName() + 
 						object.getAttribute("id").toString();
 				NodeList subobjects = object.getChildNodes();
 			    for (int j = 0; j < subobjects.getLength(); j++) {
