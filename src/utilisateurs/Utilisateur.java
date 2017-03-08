@@ -19,4 +19,8 @@ public class Utilisateur {
 	public String toString(){
 		return login + "(" + mdp + ")";
 	}
+	
+	public boolean Authentification(String name,String pwd){
+		return login.equals(name) && mdp.equals(pwd);
+	}
 }

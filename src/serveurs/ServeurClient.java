@@ -3,6 +3,7 @@ package serveurs;
 import java.io.IOException;
 
 import services.ServiceClient;
+import services.ServiceConnexion;
 
 public class ServeurClient extends Serveur{
 	ServeurClient(int port) throws IOException {
@@ -13,7 +14,7 @@ public class ServeurClient extends Serveur{
 	public void run() {
 		try {
 			while(true)
-				new ServiceClient(getListen_socket().accept()).lancer();
+				new ServiceConnexion(getListen_socket().accept()).lancer();
 		}
 		catch (IOException e) { 
 			try {this.getListen_socket().close();} catch (IOException e1) {}
