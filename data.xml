@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<data>     
+	<prog>
+		<login>edena</login>
+		<mdp>edena</mdp>
+		<ftp></ftp>
+	</prog>     
+	<prog>
+		<login>hmatico</login>
+		<mdp>hmatico</mdp>
+		<ftp></ftp>
+	</prog>   
+	<amateur>
+		<login>pierre</login>
+		<mdp>pierre</mdp>
+	</amateur>    
+	<amateur>
+		<login>paul</login>
+		<mdp>paul</mdp>
+	</amateur>    
+	<amateur>
+		<login>jacques</login>
+		<mdp>jacques</mdp>
+	</amateur>
+</data>
