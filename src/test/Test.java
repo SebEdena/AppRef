@@ -1,5 +1,6 @@
 package test;
 
+import java.net.MalformedURLException;
 import java.util.List;
 
 import fileUtil.XMLReader;
@@ -20,7 +21,9 @@ public class Test {
 				u = new Amateur(data);
 				break;
 			case "prog" : 
-				u = new Programmeur(data);
+				try {
+					u = new Programmeur(data);
+				} catch (MalformedURLException e) {}
 				break;
 			}
 			System.out.println(u);

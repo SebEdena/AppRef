@@ -6,7 +6,10 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+import fileUtil.ServiceReader;
+
 public class ServiceClient extends Service{
+	
 	public ServiceClient(Socket accept) {
 		super(accept);
 	}

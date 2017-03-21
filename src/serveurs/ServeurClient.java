@@ -2,7 +2,6 @@ package serveurs;
 
 import java.io.IOException;
 
-import services.ServiceClient;
 import services.ServiceConnexion;
 
 public class ServeurClient extends Serveur{

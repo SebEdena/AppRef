@@ -20,7 +20,11 @@ public class Utilisateur {
 		return login + "(" + mdp + ")";
 	}
 	
-	public boolean Authentification(String name,String pwd){
+	public boolean authentification(String name,String pwd){
 		return login.equals(name) && mdp.equals(pwd);
+	}
+
+	public String getLogin() {
+		return login;
 	}
 }

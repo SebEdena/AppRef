@@ -3,12 +3,12 @@
 	<prog>
 		<login>edena</login>
 		<mdp>edena</mdp>
-		<ftp></ftp>
+		<ftp>http://localhost:8080</ftp>
 	</prog>     
 	<prog>
 		<login>hmatico</login>
 		<mdp>hmatico</mdp>
-		<ftp></ftp>
+		<ftp>b</ftp>
 	</prog>   
 	<amateur>
 		<login>pierre</login>

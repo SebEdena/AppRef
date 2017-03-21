@@ -7,12 +7,14 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
+import fileUtil.ServiceReader;
+
 public class ApplicationUtilisateur {
 	private static final String ADR_CONNEXION = "localhost";
 	private static final int PORT_CONNEXION = 2500;
 
 	public static void main(String[] args) {
-		String login, mdp;
+		String data;
 		Scanner clavier = new Scanner(System.in);
 		Socket laSocket = null;
 		
@@ -20,26 +22,17 @@ public class ApplicationUtilisateur {
 			laSocket = new Socket(ADR_CONNEXION, PORT_CONNEXION);
 			BufferedReader socketIn = new BufferedReader(new InputStreamReader(laSocket.getInputStream()));
 			PrintWriter socketOut =  new PrintWriter(laSocket.getOutputStream(), true);
-
-			/* bonjour */
-			System.out.println("Bienvenue sur votre espace de connexion : ");
 			
-			/* saisie des données */;
-			System.out.println("Veuillez renseigner votre login :");
-			login = clavier.nextLine().trim().toLowerCase();
+			new ServiceReader(socketIn).lancer();
 			
-			System.out.println("Veuilez renseignez votre mot de passe:");
-			mdp = clavier.nextLine().trim().toLowerCase();
+			while(true){
+				if(clavier.hasNext()){
+					data = clavier.nextLine();
+					socketOut.println(data);
+				}
+			}
 			
-			/* envoi des données au service */
-			socketOut.println("");
-			socketOut.println("");
-
-			/* réception de la réponse
-			 * et affichage de cette réponse */
-			System.out.println(socketIn.readLine());
-			
-		} catch (IOException e) {System.out.println("Connexion annulée.");}
+		} catch (IOException e) {System.out.println("Connexion annulée." + e);}
 		try{
 			if(laSocket != null )
 				// fermeture de la connexion
